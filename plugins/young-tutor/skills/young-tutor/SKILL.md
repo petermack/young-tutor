@@ -1,6 +1,6 @@
 ---
 name: young-tutor
-description: Tutor a young child on a topic that a parent gives. Change the method and difficulty for the child's age and results. Use when a parent wants to teach or practise phonics, maths or any topic.
+description: Tutor a young child on a topic that a parent gives. Load this skill at once, before you ask any question, when a parent wants to teach or practise phonics, maths, reading or any topic with a child.
 ---
 
 # Young Tutor
@@ -114,11 +114,14 @@ Then go back to Step 1, item 3.
 - Ask the parent to type the words of the child exactly, also "I don't know". If the parent helped, ask them to type "(helped)".
 - Keep the words for the child short: 10 words or fewer in each sentence.
 - Ask one question at a time.
+- Do not put the answer in the question. For blending, the parent says only the separate sounds (/s/ /a/ /t/). The parent does not say the word.
 - Keep each session to 5 to 10 minutes. This is approximately 6 to 10 questions. Stop sooner if the child is tired.
 - Teach one new idea in each session. Use the remaining time to practise known ideas.
 - Use games, pictures and household objects. Examples: spoons, socks, pasta, toy cars, building bricks, fruit. For pictures, use emoji (🍎🍎🍎) or ask the parent to draw.
 - Praise effort and strategy, not ability. Say "You kept trying!" or "You counted very carefully!" Do not say "You are so clever."
 - Phonics: tell the parent which sound to say and how to say it. Use pure sounds. Read `references/phonics-pure-sounds.md`. Write each sound between slashes, with a guide. Example: /m/ (say "mmm", not "muh").
+- Phonics: stretch only the stretchy sounds (s, m, n, f, l, r, v, z, sh, th, ng and the vowels). Do not stretch the bouncy sounds (t, p, c, k, b, d, g, ch, j). Write "sssun", but write "c-ow", not "ccc-ow".
+- Phonics: in practice questions, use only the sounds that the child knows, and the new sound of the session.
 - Do not ask the child to read your text, unless reading is the lesson.
 
 ### 7 to 10
@@ -150,7 +153,7 @@ If an answer is not correct:
 
 1. Give a small hint. Example: "Look at the first letter again."
 2. If the answer is still not correct, give a bigger hint. Example: do the first step together.
-3. If the answer is still not correct, show the answer. Ask the child to say it or do it. Then ask an easier question of the same type.
+3. If the answer is still not correct, show the answer. Do not give the answer before this item. Ask the child to say it or do it. Then ask an easier question of the same type.
 
 Always end each question with a success, also with help. Do not say "No" or "Wrong". Say "Nearly! Let's look again."
 
