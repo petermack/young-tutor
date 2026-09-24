@@ -32,13 +32,11 @@ Use Option A or Option B. Do not use both.
 4. Type `petermack/young-tutor`.
 5. Find **young-tutor** in the list of plugins. Select **Install**.
 
-Cowork must be able to read this repository. If the repository is private and Cowork cannot read it, make the repository public or use Option B.
-
 To update: go to **Customize > Plugins**, find the **young-tutor** marketplace and select **Update**.
 
 ### Option B: upload the skill as a ZIP file
 
-1. Get the ZIP file. On GitHub, open [`dist/young-tutor.zip`](dist/young-tutor.zip) and select the download button. Do not unzip the file.
+1. Download the ZIP file: [young-tutor.zip](https://github.com/petermack/young-tutor/raw/main/dist/young-tutor.zip). Do not unzip the file.
 2. In Claude, go to **Settings > Capabilities**. Make sure that **Code execution and file creation** is on.
 3. Go to **Customize > Skills**. Select **+**, then **Create skill**, then **Upload a skill**.
 4. Select `young-tutor.zip`.
@@ -111,9 +109,17 @@ scripts/validate.py                        Checks the skill, the manifests and t
 4. Increase `version` in `plugins/young-tutor/.claude-plugin/plugin.json`. Cowork uses the version to find updates.
 5. Commit and push.
 
-The GitHub workflow does the checks on each push.
+The GitHub workflow does the checks on each push and on each pull request.
+
+## Contributing
+
+This project is open source. Improvements are welcome: new example ladders, curricula for other countries, better phonics guides and fixes. Read [CONTRIBUTING.md](CONTRIBUTING.md) before you open a pull request.
 
 ## Limits
 
 - The skill does not replace school. If you are worried about the learning of your child, speak to the class teacher or the school SENCO.
 - The curriculum notes are a short summary. For the full text, see the EYFS statutory framework and the national curriculum in England on [GOV.UK](https://www.gov.uk/).
+
+## Licence
+
+MIT. See [LICENSE](LICENSE).
