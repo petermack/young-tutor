@@ -1,0 +1,5 @@
+# Learner data: child profile and progress. Never commit it.
+learner/
+
+.DS_Store
+__pycache__/

@@ -1,0 +1,17 @@
+{
+  "name": "young-tutor",
+  "owner": {
+    "name": "Peter Mack"
+  },
+  "metadata": {
+    "description": "The young-tutor plugin for Claude Cowork and Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "young-tutor",
+      "source": "./plugins/young-tutor",
+      "description": "Tutor a young child on a topic that a parent gives. The lessons change to suit the age and results of the child.",
+      "category": "education"
+    }
+  ]
+}

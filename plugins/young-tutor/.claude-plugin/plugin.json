@@ -1,0 +1,11 @@
+{
+  "name": "young-tutor",
+  "description": "Tutor a young child on a topic that a parent gives. The lessons change to suit the age and results of the child.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Peter Mack"
+  },
+  "homepage": "https://github.com/petermack/young-tutor",
+  "repository": "https://github.com/petermack/young-tutor",
+  "keywords": ["education", "tutor", "children", "phonics", "maths", "eyfs", "ks1"]
+}
