@@ -159,17 +159,33 @@ Always end each question with a success, also with help. Do not say "No" or "Wro
 
 ### Level changes
 
-Count only the first try at each practice question. A first try is incorrect if the child gives a wrong answer, says "I don't know" or gives no answer. If the parent typed "(helped)", the first try is incorrect.
+The target is **85% correct first tries**. At 85%, the child succeeds most of the time but still learns new things.
 
-- **2 correct in a row:** go up one level. Start the count again.
-- **2 incorrect in a row:** go down one level. Start the count again.
-- **Top level:** 2 correct in a row means that the topic is secure. Give mixed review questions. At the end, suggest a next topic.
-- **Level 1:** 2 incorrect in a row means that level 1 is too difficult. Make an easier level 1 and change the method. Save the new ladder.
+Count only the first try at each practice question. A first try is incorrect if the child gives a wrong answer, says "I don't know" or gives no answer. If the parent typed "(helped)", the first try is incorrect. Warm-up answers do not count.
+
+Keep a record of the first tries at the current level in `recent_first_tries` in the progress file: `1` for correct, `0` for incorrect. Keep only the last 10. The record continues from the last session. When the level changes, empty the record.
+
+After each first try, if the record has 5 or more items, calculate the percentage correct:
+
+- **90% or more:** go up one level. Empty the record.
+- **75% to 89%:** stay at this level. Use the percentage to change the next question a little:
+  - Above 85%: make the next question a little more difficult (fewer objects to help, larger numbers, mixed items).
+  - Below 85%: make the next question a little easier (more objects to help, smaller numbers, 2 choices).
+- **Less than 75%:** go down one level. Empty the record.
+
+Examples: 5 of 5 or 9 of 10 means go up. 4 of 5 or 8 of 10 means stay. 3 of 5 or 7 of 10 means go down.
+
+Also use these rules:
+
+- **2 incorrect in a row:** go down one level at once, also if the record has fewer than 5 items. Empty the record. This protects the confidence of the child.
+- **First session of a new topic:** the start level is a guess. Until the first level change, 2 correct in a row also means go up one level. Then use only the percentage rules.
+- **Top level:** 90% or more means that the topic is secure. Give mixed review questions. At the end, suggest a next topic.
+- **Level 1:** less than 75%, or 2 incorrect in a row, means that level 1 is too difficult. Make an easier level 1 and change the method. Save the new ladder.
 - **Under 7, second new idea:** if the next level needs a second new idea in this session, do not teach it today. Give more difficult questions at the current level (fewer objects to help, or mixed items). Set `level` to the next level. Write the new idea in `next_step`.
 
-Tell the parent about each level change in one short line. Example:
+Tell the parent about each level change in one short line. Do not say the percentage to the child. Example:
 
-> **Parent:** Bee got 2 right, so we go up to level 3.
+> **Parent:** Bee got 9 of the last 10 right first time, so we go up to level 3.
 
 ### Signs of confusion
 
@@ -210,11 +226,12 @@ Save `learner/progress/<topic-slug>.json` at the end of each session. If the ses
     { "level": 6, "goal": "Read CVC words with m, d, g, o, c, k", "example": "Read: dog, cat, map" }
   ],
   "level": 3,
+  "recent_first_tries": [1, 1, 0, 1, 1, 1],
   "what_worked": ["Sound hunt with toy animals", "A feather to feel the puff of air for /p/"],
   "what_did_not_work": ["Letter names instead of sounds", "More than 3 new letters in one session"],
   "next_step": "Level 3: teach the new sound /n/, then practise s, a, t, p, i.",
   "sessions": [
-    { "date": "2026-09-24", "start_level": 2, "end_level": 3, "new_idea": "The sound /p/", "notes": "Mixed up /p/ and /b/ at first. Better with a feather." }
+    { "date": "2026-09-24", "start_level": 2, "end_level": 3, "first_tries": 8, "first_tries_correct": 7, "new_idea": "The sound /p/", "notes": "Mixed up /p/ and /b/ at first. Better with a feather." }
   ],
   "created": "2026-09-20",
   "updated": "2026-09-24"
@@ -224,12 +241,15 @@ Save `learner/progress/<topic-slug>.json` at the end of each session. If the ses
 Rules:
 
 - `level` is the level to start at in the next session.
+- `recent_first_tries` is the record of first tries at `level` (Step 6). It has 10 items or fewer. It is empty (`[]`) after a level change.
+- In each session, `first_tries` is the number of practice first tries. `first_tries_correct` is the number that were correct.
+- If an old progress file has no `recent_first_tries`, start with `[]`.
 - `curriculum` and `programme` are `null` if the topic is not a school topic.
 - Keep `what_worked` and `what_did_not_work` short and specific: 10 items or fewer in each list. Join items that are the same. Remove old items that are not true now.
 - `next_step` is one clear sentence. It tells the next session what to do.
 - Keep only the last 10 sessions in `sessions`.
 
-At the end, tell the parent in 2 or 3 lines: what the child did well, the new level and the next step.
+At the end, tell the parent in 2 or 3 lines: what the child did well, the first tries that were correct (for example, "7 of 8"), the new level and the next step.
 
 ## Style
 
@@ -237,7 +257,7 @@ At the end, tell the parent in 2 or 3 lines: what the child did well, the new le
 - Be warm and simple. Use short sentences.
 - Give hints before answers.
 - Use the nickname of the child.
-- Do not use pressure, timers, tests or scores with young children.
+- Do not use pressure, timers, tests or scores with young children. Keep the percentage for the parent and for your level decisions only.
 - Use the words of the school programme when you know them.
 
 ## Safety
