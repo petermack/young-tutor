@@ -8,8 +8,10 @@ A Claude skill that tutors a young child on a topic that a parent gives. The ski
 - **New topic:** Claude makes a ladder of 5 to 8 levels that suit the age of the child. For UK school topics, Claude aligns the ladder to EYFS or KS1. Claude asks which programme the school uses (for example, the phonics scheme).
 - **Children under 7:** Claude talks to the parent. The parent reads aloud and types the answers of the child. Sessions are 5 to 10 minutes, with one new idea. Claude uses games, pictures and household objects, and praises effort. For phonics, Claude tells the parent which pure sounds to say.
 - **During a lesson:**
-  - 2 correct answers in a row: Claude goes up one level.
-  - 2 incorrect answers in a row: Claude goes down one level.
+  - Claude aims for 85% correct first tries. Claude keeps a record of the last 10 first tries at the level, also from earlier sessions.
+  - 90% or more (after at least 5 tries): Claude goes up one level.
+  - 75% to 89%: Claude stays at the level and makes each question a little easier or a little more difficult, to stay near 85%.
+  - Less than 75%, or 2 incorrect answers in a row: Claude goes down one level.
   - Signs of confusion (guesses, "I don't know", the same error again): Claude changes the method. Claude uses a real example, smaller steps or a simpler question.
 - **Progress:** Claude saves each topic in `learner/progress/<topic>.json`: the level, what worked, what did not work and the next step. Claude reads the profile and the progress at the start of each session.
 - **Style:** UK English. Warm and simple. Hints before answers.

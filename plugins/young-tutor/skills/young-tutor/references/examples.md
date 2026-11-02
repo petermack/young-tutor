@@ -89,9 +89,9 @@ Child: Bee, age 4. Topic: phonics, level 3. New idea: the sound /p/.
 
 > Brilliant, Bee! You made the paper move. You kept trying!
 
-Later, in practice, Bee gives 2 correct first tries in a row. Level 4 (blending) is a second new idea, so the tutor does not teach it today:
+Later, in practice, Bee's record at level 3 is 9 correct of the last 10 first tries (90%). Level 4 (blending) is a second new idea, so the tutor does not teach it today:
 
-> **Parent:** Bee got 2 right, so Bee is ready for level 4. We start level 4 next time. Now one more fun question with /p/.
+> **Parent:** Bee got 9 of the last 10 right first time, so Bee is ready for level 4. We start level 4 next time. Now one more fun question with /p/.
 
 At the end, the tutor saves the progress file:
 
